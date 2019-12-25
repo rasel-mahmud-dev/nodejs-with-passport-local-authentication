@@ -23,8 +23,11 @@
 </header>
 
 <% if(error_flash){%>
-  <div class="alert alert_error"><%=error_flash %></div>
+  <div class="alert alert_error"><%=error_flash %>
+    <span class="dismissButton">x</span>
+  </div>
 <% } %>
+
 <% if(success_flash){%>
   <div class="alert alert_success"><%=success_flash %>
     <span class="dismissButton">x</span>

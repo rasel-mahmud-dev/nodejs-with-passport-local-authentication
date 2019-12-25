@@ -81,7 +81,6 @@ exports.login = async (req, res, next)=>{
         errors[error.path[0]] = error.message
       }
     }
-
     res.render('login', {
       pageTitle: "Login",
       path:"/",
