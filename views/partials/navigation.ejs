@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="/style.css">
+<header>
+  <div class="container">
+  <nav class="main_nav">
+
+    <ul class="nav_items">
+      <li><a class="<%=path === '/' ? 'active' : '' %>" href="/"> Passport-LocaL-Auth</a></li>
+    </ul>
+
+    <ul class="auth_nav">
+      <%if(currentUser){%>
+        <a href="/dashboard"><%=currentUser.username %></a>  
+        <li><a href="/logout">Logout</a></li>  
+
+      <% } else {%>
+        <li><a class="<%=path === '/register' ? 'active' : '' %>" href="/register">Register</a> </li>
+        <li><a class="<%=path === '/login' ? 'active' : '' %>" href="/login">Login</a> </li>  
+      <% } %>
+    </ul>  
+
+  </nav>
+  </div>
+</header>
+
+<% if(error_flash){%>
+  <div class="alert alert_error"><%=error_flash %></div>
+<% } %>
+<% if(success_flash){%>
+  <div class="alert alert_success"><%=success_flash %>
+    <span class="dismissButton">x</span>
+  </div>
+<% } %>

@@ -1,0 +1,48 @@
+
+<%- include('./partials/head.ejs')%>
+<link rel="stylesheet" href="/login.css">
+</head>
+
+<body>
+
+  <%- include('./partials/navigation.ejs')%>
+
+  <div class="container form_container">
+    <h1>Login Here</h1>
+    <form action="/login" method="POST">
+
+    <div class="input_group">
+      <label for="email">Email</label>
+      <input 
+        class="input <%=errorsField.email ? 'input_error': '' %>" 
+        type="text" 
+        name="email"
+        placeholder="enter email">
+
+      <% if(errorsField.email) {%>
+        <div class="error error_alert"><%=errorsField.email %></div>
+      <%}%>
+    </div>
+
+    <div class="input_group">
+      <label for="password">Password</label>
+      <input 
+        class="input <%=errorsField.email ? 'input_error': '' %>"   
+        type="password" 
+        name="password" 
+        placeholder="enter password">
+
+      <% if(errorsField.password){ %>
+        <div class="error error_alert"> <%=errorsField.password %> </div>
+      <%}%>
+
+    </div>
+    <button type="submit">Login</button>
+  </form>
+</div>
+
+
+<%- include('./partials/end.ejs')%>
+
+
+

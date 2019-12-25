@@ -1,0 +1,76 @@
+
+<%- include('./partials/head.ejs')%>
+<link rel="stylesheet" href="/login.css">
+</head>
+
+<body>
+
+  <%- include('./partials/navigation.ejs')%>
+
+  <div class="form_container">
+    <h1>Register Here</h1>
+    <form action="/register" method="POST">
+
+    <div class="input_group">
+      <label for="username">Username</label>
+      <input
+        class="input <%=errorsField.username ? 'input_error' : '' %>"  
+        type="text" 
+        name="username" 
+        placeholder="enter username">
+
+        <% if(errorsField.username){ %>
+          <div class="error error_alert"> <%=errorsField.username %></div>
+        <%}%>
+    </div>
+
+    <div class="input_group">
+      <label for="email">Email</label>
+      <input
+        class="input <%=errorsField.email ? 'input_error' : '' %>"  
+        type="text" 
+        name="email" 
+        placeholder="enter email">
+
+        <% if(errorsField.email){ %>
+          <div class="error error_alert"> <%=errorsField.email %></div>
+        <%}%>
+    </div>
+
+
+    <div class="input_group">
+      <label for="password">Password</label>
+      <input 
+        class="input <%=errorsField.password ? 'input_error' : '' %>"  
+        type="password" 
+        name="password" 
+        placeholder="enter password">
+
+      <% if(errorsField.password){ %>
+        <div class="error error_alert"> <%=errorsField.password %> </div>
+      <%}%>
+    </div>
+
+
+    <div class="input_group">
+      <label for="c-password">Confirm Password</label>
+      <input
+        class="input <%=errorsField.confirmPassword ? 'input_error' : '' %>"  
+        type="password" 
+        name="confirmPassword" 
+        placeholder="enter confirm password">
+
+      <% if(errorsField.confirmPassword){ %>
+        <div class="error error_alert"> <%=errorsField.confirmPassword %> </div>
+      <%}%>
+    </div>
+
+    <button type="submit">Register</button>
+  </form>
+</div>
+
+
+<%- include('./partials/end.ejs')%>
+
+
+

@@ -1,0 +1,19 @@
+
+<%- include('./partials/head.ejs')%>
+</head>
+<body>
+  <%- include('./partials/navigation.ejs')%>
+
+  <div class="container">
+    <h2 style="text-align:center">Dummy User Dashboard</h2>
+    <br>
+    <% if(currentUser){%>
+      <h1 style="text-align:center">Wellcome Mr. <%=currentUser.username%></h1>
+    <% } %>
+  </div>
+
+
+<%- include('./partials/end.ejs')%>
+
+
+
